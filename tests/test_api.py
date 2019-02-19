@@ -16,6 +16,9 @@ def api_call():
 class TestApiCall:
     assert isinstance(ApiCall, object) is True
     assert str(ApiCall(endpoint='http://example.org')) == "{'endpoint': 'http://example.org', 'uri': (), 'args': {}}"
+    conn = ApiCall(endpoint='http://example.org')
+    assert conn.product(id='3').kart.customer(name='foo').get_url() == \
+           'http://example.org/product/kart/customer?id=3&name=foo'
 
 
 def test_get(api_call):

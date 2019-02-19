@@ -18,6 +18,18 @@ class ApiCall(object):
         else:
             self.uri = uri
 
+    def __call__(self, *args, **kwargs):
+        if args or kwargs:
+            a = dict()
+            if kwargs:
+                a = self.args.copy()
+                a.update(kwargs)
+            return ApiCall(self.endpoint, uri=self.uri + args, args=a)
+        return self
+
+    def __getattr__(self, item):
+        return ApiCall(self.endpoint, uri=self.uri + (item,), args=self.args)
+
     def __str__(self):
         return str(dict(endpoint=self.endpoint, uri=self.uri, args=self.args))
 
