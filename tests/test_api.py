@@ -16,3 +16,7 @@ def api_call():
 class TestApiCall:
     assert isinstance(ApiCall, object) is True
     assert str(ApiCall(endpoint='http://example.org')) == "{'endpoint': 'http://example.org', 'uri': (), 'args': {}}"
+
+
+def test_get(api_call):
+    assert api_call('http://example.org/').get().status_code == 200
