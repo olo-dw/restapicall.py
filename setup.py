@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="rest-api-call-olo-dw",
+    name="RestApiCall",
     version="0.0.1",
     author="Olivier Locard",
     description="This python library is a REST API Call which generates REST URLs using attributes.",
