@@ -1,6 +1,6 @@
 # REST API CALL
 
-This **python** REST API CALL generates REST URLs using attributes.
+This **python** library is a REST API Call which generates REST URLs using attributes.",
 
 As an example:
 
