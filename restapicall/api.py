@@ -22,12 +22,14 @@ class ApiCall(object):
         return str(dict(endpoint=self.endpoint, uri=self.uri, args=self.args))
 
     def get(self):
-        url = Utils.build_uri(self.endpoint, self.uri, self.args)
-        r = requests.get(url)
-        return r
+        return requests.get(self.get_url())
+
+    def get_url(self):
+        return Utils.build_uri(self.endpoint, self.uri, self.args)
 
 
 if __name__ == '__main__':
     conn = ApiCall('http://example.org')
     r = conn.get()
-    print(str(r.text))
+    print(r.status_code)
+    print(r.headers['content-type'])
