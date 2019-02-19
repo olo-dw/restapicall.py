@@ -10,7 +10,7 @@ from restapicall.api import ApiCall
 
 @pytest.fixture
 def api_call():
-    return ApiCall()
+    return ApiCall
 
 
 class TestApiCall:
