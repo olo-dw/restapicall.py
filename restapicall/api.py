@@ -42,6 +42,7 @@ class ApiCall(object):
 
 if __name__ == '__main__':
     conn = ApiCall('http://example.org')
-    r = conn.get()
+    r = conn.product.kart.customer(id='3', name='foo').get()
+    print(r.url)
     print(r.status_code)
     print(r.headers['content-type'])
