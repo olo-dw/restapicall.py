@@ -33,8 +33,8 @@ class ApiCall(object):
     def __str__(self):
         return str(dict(endpoint=self.endpoint, uri=self.uri, args=self.args))
 
-    def get(self):
-        return requests.get(self.get_url())
+    def get(self, params=None, **kwargs):
+        return requests.get(self.get_url(), params=params, **kwargs)
 
     def get_url(self):
         return Utils.build_uri(self.endpoint, self.uri, self.args)

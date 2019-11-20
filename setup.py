@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="RestApiCall",
-    version="0.0.3",
+    version="0.1.0",
     author="Olivier Locard",
     description="This python library is a REST API Call which generates REST URLs using attributes.",
     long_description=long_description,
