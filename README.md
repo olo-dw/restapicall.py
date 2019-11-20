@@ -18,7 +18,8 @@ with this **python** library is the sequence:
 
 You can perform the request (Cf. http://docs.python-requests.org/) with `get()`:
 
-    >>> conn = ApiCall(endpoint='http://example.org')
+    >>> import restapicall
+    >>> conn = restapicall.ApiCall(endpoint='http://example.org')
     >>> r = conn.product.kart.customer(id='3', name='foo').get()
     >>> r.url
     http://example.org/product/kart/customer?id=3&name=foo
@@ -31,7 +32,8 @@ You can perform the request (Cf. http://docs.python-requests.org/) with `get()`:
 
 the url can be get by `get_url()`:
 
-    >>> conn = ApiCall(endpoint='http://example.org')
+    >>> import restapicall
+    >>> conn = restapicall.ApiCall(endpoint='http://example.org')
     >>> r = conn.product(id='3').kart.customer(name='foo').get_url()
     >>> print(r)
     http://example.org/product/kart/customer?id=3&name=foo'
